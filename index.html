@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BURGER HOUSE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./responsive.css">
+</head>
+<body>
+<header class="nav" id="nav">
+  <a href="#home" class="logo">🍔 BURGER <span>HOUSE</span></a>
+  <nav class="links" id="links">
+    <a href="#home" data-i18n="home">Home</a>
+    <a href="#menu" data-i18n="menu">Menu</a>
+    <a href="#about" data-i18n="about">About</a>
+    <a href="#popular" data-i18n="popular">Popular</a>
+    <a href="#contact" data-i18n="contact">Contact</a>
+  </nav>
+  <div class="tools">
+    <select id="lang" aria-label="Language">
+      <option value="uz">UZ</option><option value="en">EN</option><option value="ru">RU</option><option value="tr">TR</option>
+      <option value="ar">AR</option><option value="de">DE</option><option value="fr">FR</option><option value="es">ES</option>
+    </select>
+    <button id="theme" class="icon" aria-label="Theme">🌙</button>
+    <button id="cartBtn" class="icon" aria-label="Cart">🛒<b id="cartCount">0</b></button>
+    <button id="authBtn" class="btn small" data-i18n="login">Login</button>
+    <button id="burger" class="icon hamb" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-text">
+    <h1 data-i18n="heroTitle">Eng mazali burgerlar</h1>
+    <p data-i18n="heroText">Yangi, issiq va tez yetkazib beramiz.</p>
+    <div class="row">
+      <a href="#menu" class="btn" data-i18n="order">Order Now</a>
+      <a href="#menu" class="btn ghost" data-i18n="explore">Explore Menu</a>
+    </div>
+  </div>
+  <img class="hero-img" alt="Burger" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80">
+</section>
+
+<section class="carousel" id="carousel" aria-label="Slider">
+  <div class="track" id="track"></div>
+  <button class="arrow prev" id="prev" aria-label="Prev">‹</button>
+  <button class="arrow next" id="next" aria-label="Next">›</button>
+  <div class="dots" id="dots"></div>
+</section>
+
+<section class="sec" id="menu">
+  <h2 data-i18n="menu">Menu</h2>
+  <div class="filters">
+    <input id="search" type="search" placeholder="Search..." data-i18n-ph="search">
+    <div id="cats"></div>
+  </div>
+  <div class="grid" id="products"></div>
+</section>
+
+<section class="sec alt" id="about">
+  <h2 data-i18n="about">About</h2>
+  <p class="center" data-i18n="aboutP">2015-yildan beri mazali taomlar.</p>
+  <div class="grid3">
+    <div class="card"><h3>🥩 <span data-i18n="why1">Fresh</span></h3></div>
+    <div class="card"><h3>⚡ <span data-i18n="why2">Fast</span></h3></div>
+    <div class="card"><h3>💰 <span data-i18n="why3">Affordable</span></h3></div>
+  </div>
+</section>
+
+<section class="sec" id="popular">
+  <h2 data-i18n="popular">Popular</h2>
+  <div class="grid3" id="popGrid"></div>
+  <div class="offer"><h3>🔥 -20% <span data-i18n="offer">Special Offer</span></h3></div>
+  <h2 data-i18n="reviews">Reviews</h2>
+  <div class="grid3">
+    <div class="card">⭐⭐⭐⭐⭐<p>"Best burger in town!"</p><b>Aziz</b></div>
+    <div class="card">⭐⭐⭐⭐⭐<p>"Fast delivery, hot food."</p><b>Madina</b></div>
+    <div class="card">⭐⭐⭐⭐<p>"Great fries and shakes."</p><b>Jasur</b></div>
+  </div>
+</section>
+
+<section class="sec alt" id="contact">
+  <h2 data-i18n="contact">Contact</h2>
+  <p class="center">📍 Tashkent, Amir Temur 1 &nbsp; 📞 +998 90 123 45 67 &nbsp; ✉️ info@burgerhouse.uz</p>
+  <form id="news" class="news" novalidate>
+    <input id="newsEmail" type="email" placeholder="Email">
+    <button class="btn" data-i18n="subscribe">Subscribe</button>
+  </form>
+</section>
+
+<footer>
+  <div class="social"><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a><a href="https://t.me" target="_blank" rel="noopener">Telegram</a><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></div>
+  <p>© 2026 BURGER HOUSE</p>
+</footer>
+
+<aside class="drawer" id="drawer">
+  <div class="drawer-head"><h3 data-i18n="cart">Cart</h3><button class="icon" id="closeCart">✕</button></div>
+  <div id="cartItems"></div>
+  <div class="drawer-foot"><p><span data-i18n="total">Total</span>: <b id="cartTotal">0</b> UZS</p><button class="btn" id="checkout" data-i18n="checkout">Checkout</button></div>
+</aside>
+
+<div class="modal" id="modal">
+  <form class="box" id="authForm" novalidate>
+    <button type="button" class="icon close" id="closeModal">✕</button>
+    <h3 id="authTitle">Login</h3>
+    <div id="regFields">
+      <input id="fname" placeholder="Ism"><input id="lname" placeholder="Familiya">
+      <input id="phone" placeholder="+998901234567">
+    </div>
+    <input id="email" type="email" placeholder="Email">
+    <input id="pass" type="password" placeholder="Parol">
+    <input id="pass2" type="password" placeholder="Parolni tasdiqlang">
+    <p id="authErr" class="err"></p>
+    <button class="btn" id="authSubmit">OK</button>
+    <a href="#" id="switchAuth">Register</a>
+  </form>
+</div>
+
+<button id="toTop" class="top" aria-label="Top">↑</button>
+<div id="toast" class="toast"></div>
+<script src="./script.js"></script>
+</body>
+</html>

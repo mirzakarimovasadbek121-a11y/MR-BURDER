@@ -1,0 +1,16 @@
+@media (max-width:1440px){.sec{padding:60px 5%}}
+@media (min-width:1441px){.sec,.hero{padding-left:12%;padding-right:12%}.nav{padding-left:12%;padding-right:12%}}
+@media (max-width:1200px){.hero h1{font-size:4rem}}
+@media (max-width:992px){
+  .hamb{display:inline-block}
+  .links{position:absolute;top:100%;left:0;right:0;flex-direction:column;background:#0d0d0d;padding:0 5%;max-height:0;overflow:hidden;transition:.35s}
+  .links.open{max-height:360px;padding:16px 5%}
+  .hero{flex-direction:column;text-align:center;padding-top:100px}
+  .hero p{margin-left:auto;margin-right:auto}.row{justify-content:center}
+  .hero-img{max-width:380px}
+}
+@media (max-width:768px){.hero h1{font-size:3.2rem}.slide{aspect-ratio:16/9}.sec h2{font-size:2.2rem}}
+@media (max-width:576px){.logo{font-size:1.3rem}.nav{padding:10px 3%}.tools{gap:5px}.hero h1{font-size:2.8rem}.hero-img{max-width:280px}.grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}.slide{aspect-ratio:4/3}.arrow{width:34px;height:34px}}
+@media (max-width:425px){.btn{padding:10px 18px}.btn.small{padding:7px 10px;font-size:.75rem}.icon{width:34px;height:34px}.hero h1{font-size:2.4rem}select{padding:6px}}
+@media (max-width:375px){.logo{font-size:1.1rem}.hero h1{font-size:2.1rem}.drawer{width:100%}.grid{grid-template-columns:1fr}}
+@media (max-width:320px){.logo{font-size:.95rem}.tools{gap:3px}.icon{width:30px;height:30px;font-size:.8rem}.btn.small{font-size:.7rem;padding:6px 8px}.sec{padding:45px 4%}}
